@@ -167,13 +167,19 @@ body {
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
+@media (max-width: 767px) {
+    .game .block-game {
+        width: 80px;
+        height: 125px;
+    }
+}
 .back img {
     width: 130px;
     height: 130px;
 }
 @media (max-width: 767px) {
     .back img {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
     }
 }
