@@ -1,0 +1,179 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 90%;
+    margin: 5px auto;
+    font-family: system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.splash-screen {
+    position: absolute;
+    z-index: 9;
+    background-color: #000000bf;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.splash-screen button{
+    background-color: #009688;
+    color: white;
+    padding: 15px 20px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+.try-again{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #7955485c;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.try-again div {
+    padding: 14px;
+    background-color: red;
+    width: 100%;
+    text-align: center;
+}
+.try-again span{
+    display: block;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.try-again button{
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.end {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #00968842;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.end span{
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    font-size: 35px;
+}
+.container-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #eee;
+    border: 2px solid #2196F3;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+    .container-info {
+        display: block;
+    }
+    .time {
+        margin: 5px 0;
+    }
+}
+.container-info .name .my-name {
+    color: #2196F3;
+}
+.time {
+    background-color: #ccc;
+    padding: 5px;
+    font-size: 23px;
+    text-align: center;
+}
+.container-info .tries {
+    display: flex;
+    align-items: center;
+}
+.container-info .tries span,
+.correct span {
+    font-size: 23px;
+    color: red;
+    padding-left: 3px;
+}
+.game{
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.game .block-game{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    position: relative;
+    border: 5px solid #2196F3;
+    cursor: pointer;
+}
+.game .block-game.rotate,
+.game .block-game.rotation {
+    transform: rotateY(180deg);
+}
+.game.no-clicking {
+    pointer-events: none;
+}
+.game .block-game .front{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2f2f2f;
+    backface-visibility: hidden;
+}
+.game .block-game .front::before {
+    position: absolute;
+    content: "?";
+    color: white;
+    font-size: 140px;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.game .block-game .back{
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.back img {
+    width: 130px;
+    height: 130px;
+}
+@media (max-width: 767px) {
+    .back img {
+        width: 100px;
+        height: 100px;
+    }
+}
